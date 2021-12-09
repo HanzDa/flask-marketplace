@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %} Marketplace {% endblock %}
+    </title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    {% if show_navbar %}
+        <nav>
+            <li>this is for navbar</li>
+            <li>this is for navbar</li>
+            <li>this is for navbar</li>
+        </nav>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+
+    {% if show_footer %}
+        <nav>
+            <li>this is for footer</li>
+            <li>this is for footer</li>
+            <li>this is for footer</li>
+        </nav>
+    {% endif %}
+</body>
+</html>
