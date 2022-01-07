@@ -1,7 +1,40 @@
+{% from 'macros.html' import render_field %}
+
 {% extends 'base.html' %}
 
 {% block title %}Register{% endblock %}
 
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/sign_up.css') }}">
+{% endblock %}
+
 {% block content %}
-    <h1>this is the content of the register view</h1>
+    <main class='main-sign-up'>
+        <div class='formHeader'>
+            <h3>Register</h3>
+        </div>
+        <form class='sign-up-form' action="">
+            {{ form.csrf_token }}
+    
+            {{ render_field( form.fulname, autofocus=true) }}
+            {{ render_field( form.phoneNumber)             }}
+            {{ render_field( form.residenceAddress)        }}
+            {{ render_field( form.username)                }}
+            {{ render_field( form.password)                }}
+            {{ render_field( form.password2)               }}
+
+            <div class="terms">
+                {{ form.acceptTerms }}
+                <p>
+                    I have read and agree to all <a class='link' href="#">terms and conditions</a>
+                    <!-- TODO: put terms and condition link -->
+                </p>
+            </div>
+
+        </form>
+    
+        <div class="formFooter">
+            <button class='sign-up-button' type='submit'>Sign Up</button>
+        </div>
+    </main>
 {% endblock %}

@@ -8,6 +8,7 @@
         {% block title %} Marketplace {% endblock %}
     </title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+    {% block styles %}{% endblock %}
 </head>
 <body>
     {% if show_navbar %}
